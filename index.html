@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    	<meta charset="utf-8" />
+    	<title>Mridul Sharma</title>
+    	<link rel="shortcut icon" type="image/png" href="thorfinn_pfp.jpg"/>
+		<link rel="icon" type="image/jpg" href="/images/thorfinn_pfp.jpg">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+    	<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap" rel="stylesheet">
+		<!-- analytics -->
+
+		<style>
+
+			body {
+				background-color: #ffffff;
+				color: #666;
+				font-family: "Segoe UI", sans-serif, verdana;
+				font-size: 1.2em;
+				margin: 0;
+				margin-top: 1.5em;
+				user-select: none;
+			}
+			@media (prefers-color-scheme: dark) {
+				body {
+					background-color: #1c2a2d;
+					color: #ddd;
+					.name{
+						color: rgb(22, 221, 168);
+					}
+
+					.profile_pic img{
+						color: rgb(22, 221, 168);
+					}
+				}
+			}
+			@media screen and (max-device-width: 480px){
+				body{
+					font-size: 3em;	
+					margin-top: 0.4em;
+				}
+			}
+			.name {
+				font-family: Cormorant;
+				font-variant: small-caps;
+				font-size: 2em;
+				font-weight: 100;
+				color: rgb(8, 0, 44);
+			}
+			.name_sub {
+				font-size: 1em;
+				font-weight: 200;
+				color: rgb(8, 0, 44);
+			}
+			.desc {
+				font-size: 0.9em;
+			}
+			.outer {
+				display: table;
+				position: absolute;
+				height: 100%;
+				width: 100%;
+			}
+			.middle {
+				display: table-cell;
+				vertical-align: middle; 
+			}
+			.inner {
+				text-align: center;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 600px;
+			}
+			@media screen and (max-device-width: 480px){
+				.inner{
+					max-width: 100%;
+				}
+			}
+			.main_card {
+				padding-bottom: 12px;
+				padding-top: 8px;
+				border-radius: 64px;
+			}
+			.profile_pic {
+				margin-bottom: 1em;
+			}
+			@media screen and (max-device-width: 480px){
+				.profile_pic {
+					margin-bottom: 0.1em;
+				}
+			}
+			    
+			.profile_pic img {
+				display: block;
+				margin: auto;
+				border-radius: 160px;
+				overflow: hidden;
+				border-style: solid;
+				color: rgb(8, 0, 44);
+				border-width: 4px;
+			}
+			.social_icon {
+				margin-left: 8px;
+				margin-right: 8px;
+				width: 32px;
+				height: 32px;
+				filter: drop-shadow(1px 3px 1px #15202b33 );
+			}
+			@media (prefers-color-scheme: dark) {
+				.social_icon {
+					filter: drop-shadow(2px 3px 2px black);
+				}
+			}
+			@media screen and (max-device-width: 480px){
+				.social_icon{
+					width: 64px;
+					height: 64px;
+					margin-left: 16px;
+					margin-right: 16px;
+				}
+			}
+			.social_icons {
+				margin-top: 0.1em;
+			}
+			.email{
+				margin-top: 0.4em;
+				font-family: monospace;
+			}
+
+			h3{
+				margin-top: 1.3em;
+				margin-bottom: 0.4em;
+				font-family: Cormorant;
+				font-size: 1.6em;
+				font-weight: 100;
+				text-decoration: underline;
+				text-decoration-thickness: from-font;
+				text-decoration-color: #aaa;
+			}
+			h3:after{
+				content: "\00a0\00a0";	
+			}
+			h3:before{
+				content: "\00a0\00a0";
+			}
+			@media screen and (max-device-width: 480px){
+				h3{
+				    margin-top: 0.6em;
+				}
+			}
+
+			.proj-card img{
+				width: 256px;
+				border-radius: 0.4em;
+				box-shadow: 0.1em 0.1em 0.2em #0134;
+			}
+			@media screen and (max-device-width: 480px){
+				.proj-card img{
+					width: 512px;
+				}
+			}
+			.proj-card img:hover{
+				filter:brightness(110%);
+			}
+			.proj-container-vertical{
+				display: inline-block;
+			    width: 256px;
+			    padding: 0.4em;
+			}
+			@media screen and (max-device-width: 480px){
+				.proj-container-vertical{
+					width: 80%;
+					padding-bottom: 1em;
+				}
+			}
+			.proj-container{
+				display: flex;
+			}
+			@media screen and (max-device-width: 480px){
+				.proj-container{
+					padding-left: 1em;
+				}
+			}
+			.proj-img{
+				display: inline-block;
+				border: solid 1px #ddd;
+				border-radius: 0.25em;
+				width: 160px;
+				height: 90px;
+				flex-shrink: 0;
+			}
+			.proj-right{
+				padding: 0.3em;
+				display: block;
+				flex-grow: 1;
+    		}
+			.proj-desc{
+				font-size: 0.8em;
+			}
+			.proj-title{
+				font-size: 0.9em;
+				font-weight: 500;
+				display: inline-block;
+			}
+			.proj-title-centered{
+				font-size: 0.9em;
+				font-weight: 500;
+				text-align: center;
+			}
+			.timespan{
+			    color: #bbb;
+			    font-size: 0.6em;
+			    margin-left: 0.1em;
+			    display: inline-block;
+			    width: 4.8em;
+			    padding-right: 0.8em;
+			    padding-top: 1.1em;
+			    text-align: right;
+			    flex-grow: 0;
+			    flex-shrink: 0;
+			}
+
+			a{
+				color: rgb(22, 221, 168);
+				text-decoration: none;
+			}
+			ul{
+				margin-top: 0.2em;
+			}
+			.project-list-cards{
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			.project-list-normal{
+				margin-bottom: 4em;
+				display: flex;
+				flex-direction: column;
+				text-align: left;
+			}
+
+
+
+			.tooltip {
+				position: relative;
+				display: inline-block;
+			}
+
+			/* Tooltip text */
+			.tooltip .tooltiptext {
+				visibility: hidden;
+				width: 16em;
+				background-color: #fff;
+				color: #666;
+				text-align: center;
+				padding: 0.5em 0;
+				padding-bottom: 0.8em;
+				border-radius: 6px;
+				font-size: 0.7em;
+				box-shadow: 0.1em 0.1em 0.4em #0134;
+
+				/* Position the tooltip text - see examples below! */
+				width: 16em;
+				bottom: 100%;
+				left: 50%;
+				margin-left: -8em; /* Use half of the width (120/2 = 60), to center the tooltip */
+				position: absolute;
+				z-index: 1;
+			}
+			.tooltip .tooltiptext::after {
+			  content: " ";
+			  position: absolute;
+			  top: 100%; /* At the bottom of the tooltip */
+			  left: 50%;
+			  margin-left: -5px;
+			  border-width: 5px;
+			  border-style: solid;
+			  border-color: #fff transparent transparent transparent;
+			}
+
+			@media screen and (max-device-width: 480px){
+				.tooltip .tooltiptext {
+					visibility: hidden;
+					display: none;
+				}
+				.tooltip .tooltiptext::after {
+					visibility: hidden;
+					display: none;
+				}
+
+			}
+
+			/* Show the tooltip text when you mouse over the tooltip container */
+			.tooltip:hover .tooltiptext {
+				visibility: visible;
+			}
+
+		</style>
+
+
+
+	</head>
+	<body>
+		<div class="outer">
+			<div class="middle">
+				<div class="inner">
+					<div class="profile_pic"><img src="images/thorfinn_pfp.jpg" width="300" height="300"></div>
+					<span class="name">Mridul Sharma</span><br>
+					<!--<span class="name_sub">I make things</span><br>-->
+					<div class="main_card">
+						<div class="social_icons" id="social_icons">
+                            <div class="tooltip">
+                                <a href="https://www.instagram.com/mridulsharrr/"><img class="social_icon" src="images/logo_instagram.png" alt="Instagram">
+									<div class="tooltiptext">Instagram | mridulsharrr</div>
+								</a>      
+                            </div>
+                            <div class="tooltip">
+                                <a href="https://discord.gg/6232jmcBfu"><img class="social_icon" src="images/logo_discord.png" alt="Discord">
+									<div class="tooltiptext">Discord Server</div>
+								</a>      
+                            </div>
+                            <div class="tooltip">
+                                <a href="https://x.com/mridulsharrr"><img class="social_icon" src="images/logo_twitter.png" alt="X aka Twitter">
+									<div class="tooltiptext">X aka Twitter</div>
+								</a>      
+                            </div>
+
+                        </div>
+						<div class="email">i'll add later@gmail.com</div>
+					</div>
+
+
+					<h3>Current Projects</h3>
+					<div class="project-list-cards" id="projects-current">
+                        <div class="proj-container-vertical">
+                            <div class="proj-card"><a href=""><img src="images/javaopengl_anims.gif"></a></div>
+                            <div class="proj-right">
+                                <div class="proj-title-centered"><a href="https://github.com/mridulsharrr/NexhusEngine">Java &amp; OpenGL</a></div>
+                                
+                                <div class="proj-desc">Programming in Java &amp; rendering with OpenGL</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+					<!--<h3>Side Projects</h3>
+					<div class="project-list-normal" id="projects-side"></div>-->
+
+					<!--<h3>Past Projects</h3>
+					<div class="project-list-normal" id="projects-past"></div>-->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
